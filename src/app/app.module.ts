@@ -7,6 +7,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CoreModule } from './core/core.module';
 
 /* import { MultiLanguageComponent } from './components/multi-language/multi-language.component'; */
 @NgModule({
@@ -14,8 +15,11 @@ import { ToastrModule } from 'ngx-toastr';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    CoreModule,
     HttpClientModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 5000,
+    }),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {

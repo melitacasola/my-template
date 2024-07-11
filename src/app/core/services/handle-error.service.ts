@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class ErrorService {
+export class HandleErrorService {
   constructor() {}
   getClientMessage(error: Error): string {
     return error.message ? error.message : error.toString();
